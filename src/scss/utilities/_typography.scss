@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Caprice";
+  src: url("../fonts/caprice.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Typey McTypeface";
+  src: url("../fonts/typey-mctypeface.otf") format("opentype");
+  font-style: normal;
+}
+
+$header-font: "Caprice";
+$body-text-font: "Typey McTypeface";

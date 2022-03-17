@@ -32,3 +32,9 @@ When you want to stop the watcher, click in the terminal and press ctrl-c
    ```
 
 1. The final version of your site will be in the `dist` folder.
+
+## Fonts
+
+https://www.1001fonts.com/caprice-font.html
+
+https://www.1001fonts.com/typey-mctypeface-font.html
