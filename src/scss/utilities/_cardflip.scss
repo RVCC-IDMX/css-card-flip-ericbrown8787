@@ -1,0 +1,44 @@
+.card {
+  &__content {
+    block-size: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+
+  &:hover &__content {
+    transform: rotateY(0.5turn);
+  }
+
+  &__front,
+  &__back {
+    block-size: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  &__title {
+    transform: translateZ(5rem);
+  }
+
+  &__subtitle {
+    transform: translateZ(5rem);
+  }
+
+  &__stats {
+    transform: translateZ(2rem);
+  }
+
+  &__flavor-text {
+    transform: translateZ(2rem);
+  }
+
+  &__back {
+    transform: rotateY(0.5turn);
+  }
+}
