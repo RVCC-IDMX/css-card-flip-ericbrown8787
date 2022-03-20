@@ -1,5 +1,4 @@
 @use "index" as i;
-@use "./utilities/cardflip";
 
 body {
   height: 100vh;
@@ -7,17 +6,22 @@ body {
   place-items: center;
 }
 .card {
-  inline-size: 400px;
-  block-size: 800px;
-
+  font-family: i.$body-text-font;
+  inline-size: 100%;
+  block-size: 600px;
+  max-inline-size: 400px;
   &__content {
     text-align: center;
     padding: 5em;
-    background: pink;
   }
 
   &__front,
   &__back {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
     inline-size: 100%;
     padding: 2em;
   }
@@ -26,11 +30,130 @@ body {
     background: lightgreen;
   }
 
-  &__title {
-    font-size: 3rem;
-  }
-
   &__back {
     background: lightblue;
+  }
+
+  &__title {
+    &--stats {
+      font-family: i.$header-font;
+    }
+
+    &--name {
+      font-size: 3rem;
+    }
+    &--stats {
+      padding: 1rem;
+    }
+  }
+
+  &__decoration {
+    &--spiral-top,
+    &--spiral-bottom {
+      position: absolute;
+      height: auto;
+      width: 75px;
+      background-color: aliceblue;
+      border-radius: 86% 93% 88% 80%;
+      padding: 5px;
+    }
+    &--spiral-top {
+      top: 1em;
+      left: 1em;
+      align-self: baseline;
+    }
+    &--spiral-bottom {
+      bottom: 1em;
+      right: 1em;
+      align-self: flex-end;
+    }
+  }
+
+  &__stats,
+  &__flavor-text {
+    background: beige;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
+  }
+
+  &__flavor-text {
+    font-style: italic;
+  }
+}
+
+.portrait {
+  background: beige;
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.statbox {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  &__stat {
+    &--class,
+    &--primary,
+    &--secondary {
+      border: 2px dashed black;
+    }
+
+    &--class {
+      grid-column: span 6;
+
+      .class {
+        &__name,
+        &__level {
+          display: block;
+        }
+        &__level {
+          font-size: 0.7rem;
+        }
+      }
+    }
+    &--primary {
+      grid-column: span 2;
+    }
+    &--secondary {
+      grid-column: span 3;
+    }
+  }
+}
+
+.title {
+  background: beige;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px black;
+
+  &__name {
+    font-family: i.$header-font;
+  }
+  &__epithet {
+    font-size: 1.8rem;
+  }
+}
+.stat {
+  &__value {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.class-info {
+  &__name,
+  &__level {
+    display: block;
+  }
+  &__level {
+    font-size: 0.7rem;
   }
 }
