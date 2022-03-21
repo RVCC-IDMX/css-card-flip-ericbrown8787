@@ -1,0 +1,62 @@
+@use "./utilities/typography" as t;
+
+@media (hover: none) {
+  .content {
+    gap: 10px;
+    &__block {
+      width: 100%;
+    }
+  }
+  .card {
+    font-size: 0.9rem;
+    &__stats {
+      padding: 5px;
+    }
+
+    &__title {
+      &--stats {
+        padding: 0;
+      }
+    }
+  }
+  .statbox {
+    gap: 4px;
+    &__stat {
+      &--class,
+      &--primary,
+      &--secondary {
+        padding: 1px;
+        border: none;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .namecard {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    &__title {
+      &--name {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+        padding: 5px;
+      }
+    }
+    &__name {
+      font-family: t.$header-font;
+      font-size: 1.3rem;
+    }
+    &__epithet {
+      font-size: 0.8rem;
+    }
+
+    &__portrait {
+      width: 50%;
+    }
+  }
+}

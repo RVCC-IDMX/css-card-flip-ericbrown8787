@@ -33,8 +33,22 @@ When you want to stop the watcher, click in the terminal and press ctrl-c
 
 1. The final version of your site will be in the `dist` folder.
 
+# CSS 3D Flipping Trading Card
+
+## Intro
+
+This project is a virtual trading card with 3-D flipping effect on hover, revealing more information about the featured character, using Dungeons and Dragons, Magic: The Gathering and other tabletop games as inspiration. The card also functions on hover-disabled devices, using an alternate single-sided layout.
+
+## Images
+
+The image of the character featured on the trading card was created by [Sarah Lopez](https://www.instagram.com/inkcap_creations/) in colored pencil and watercolor, then digitized and edited. I am using it with her permission.
+
+The spiral vector graphics were created by myself using Adobe Illustrator.
+
 ## Fonts
 
+"Caprice"
 https://www.1001fonts.com/caprice-font.html
 
+"Typey McTypeface"
 https://www.1001fonts.com/typey-mctypeface-font.html

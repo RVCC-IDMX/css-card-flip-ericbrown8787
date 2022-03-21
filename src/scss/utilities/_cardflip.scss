@@ -1,12 +1,12 @@
 .card {
+  &__namecard--mobile {
+    display: flex;
+  }
+
   &__content {
     block-size: 100%;
     position: relative;
-    transition: transform 1s;
     transform-style: preserve-3d;
-  }
-
-  &:hover &__content {
     transform: rotateY(0.5turn);
   }
 
@@ -22,26 +22,47 @@
     transform-style: preserve-3d;
   }
 
-  &__title {
-    &--stats,
-    &--name {
-      transform: translateZ(2rem);
+  @media (hover) {
+    &__namecard--mobile {
+      display: none;
+    }
+
+    &__content {
+      transition: transform 1s;
+      transform: rotateY(1turn);
+    }
+
+    &:hover &__content {
+      transform: rotateY(0.5turn);
     }
   }
 
-  &__subtitle {
-    transform: translateZ(2rem);
-  }
+  // &__title {
+  //   &--stats,
+  //   &--name {
+  //     transform: translateZ(2rem);
+  //   }
+  // }
+  // &__portrait {
+  //   transform: translateZ(2rem);
+  // }
+  // &__subtitle {
+  //   transform: translateZ(2rem);
+  // }
 
-  &__stats {
-    transform: translateZ(2rem);
-  }
+  // &__stats {
+  //   transform: translateZ(2rem);
+  // }
 
-  &__flavor-text {
-    transform: translateZ(2rem);
-  }
+  // &__flavor-text {
+  //   transform: translateZ(2rem);
+  // }
 
   &__back {
     transform: rotateY(0.5turn);
   }
+}
+
+.content {
+  transform: translateZ(2rem);
 }

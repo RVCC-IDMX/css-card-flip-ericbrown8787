@@ -1,0 +1,8 @@
+@use "variables" as v;
+
+@mixin text-box-styles {
+  background: v.$box-background-color;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px black;
+}

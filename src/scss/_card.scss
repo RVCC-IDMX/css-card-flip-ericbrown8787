@@ -2,14 +2,24 @@
 
 body {
   height: 100vh;
+  padding: 5px;
   display: grid;
   place-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: calc(100% - 35px);
 }
 .card {
   font-family: i.$body-text-font;
   inline-size: 100%;
   block-size: 600px;
   max-inline-size: 400px;
+
   &__content {
     text-align: center;
     padding: 5em;
@@ -27,18 +37,17 @@ body {
   }
 
   &__front {
-    background: lightgreen;
+    background: i.$front-background-color;
   }
 
   &__back {
-    background: lightblue;
+    background: i.$back-background-color;
   }
 
   &__title {
     &--stats {
       font-family: i.$header-font;
     }
-
     &--name {
       font-size: 3rem;
     }
@@ -49,32 +58,71 @@ body {
 
   &__decoration {
     &--spiral-top,
-    &--spiral-bottom {
+    &--spiral-bottom,
+    &--bar-top,
+    &--bar-bottom,
+    &--bar-left,
+    &--bar-right {
       position: absolute;
+      background-color: i.$deco-background-color;
+    }
+
+    &--spiral-top,
+    &--spiral-bottom {
       height: auto;
       width: 75px;
-      background-color: aliceblue;
+      z-index: 1;
       border-radius: 86% 93% 88% 80%;
       padding: 5px;
     }
     &--spiral-top {
       top: 1em;
       left: 1em;
-      align-self: baseline;
     }
+
+    &--bar-top {
+      top: 1.3em;
+      left: 2em;
+      border-radius: 30% 30% 90% 40%;
+    }
+
     &--spiral-bottom {
       bottom: 1em;
       right: 1em;
-      align-self: flex-end;
+    }
+
+    &--bar-bottom {
+      bottom: 1.3em;
+      right: 2em;
+      border-radius: 90% 30% 40% 30%;
+    }
+
+    &--bar-top,
+    &--bar-bottom {
+      height: 55px;
+      width: 80%;
+    }
+
+    &--bar-left,
+    &--bar-right {
+      height: 80%;
+      width: 55px;
+    }
+    &--bar-left {
+      top: 1.3em;
+      left: 2em;
+      border-radius: 40% 90% 40% 40%;
+    }
+    &--bar-right {
+      bottom: 1.3em;
+      right: 2em;
+      border-radius: 90% 40% 30% 45%;
     }
   }
 
   &__stats,
   &__flavor-text {
-    background: beige;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px black;
+    @include i.text-box-styles;
   }
 
   &__flavor-text {
@@ -83,7 +131,8 @@ body {
 }
 
 .portrait {
-  background: beige;
+  @include i.text-box-styles;
+  background: i.$portrait-background-color;
   &__image {
     width: 100%;
     height: auto;
@@ -95,7 +144,7 @@ body {
   grid-template-columns: repeat(6, 1fr);
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
 
   &__stat {
     &--class,
@@ -127,10 +176,7 @@ body {
 }
 
 .title {
-  background: beige;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px black;
+  @include i.text-box-styles;
 
   &__name {
     font-family: i.$header-font;
@@ -157,3 +203,64 @@ body {
     font-size: 0.7rem;
   }
 }
+
+// @media (hover: none) {
+//   .content {
+//     gap: 10px;
+//     &__block {
+//       width: 100%;
+//     }
+//   }
+//   .card {
+//     font-size: 0.9rem;
+//     &__stats {
+//       padding: 5px;
+//     }
+
+//     &__title {
+//       &--stats {
+//         padding: 0;
+//       }
+//     }
+//   }
+//   .statbox {
+//     gap: 4px;
+//     &__stat {
+//       &--class,
+//       &--primary,
+//       &--secondary {
+//         padding: 1px;
+//         border: none;
+//         font-size: 0.8rem;
+//       }
+//     }
+//   }
+
+//   .namecard {
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 10px;
+//     &__title {
+//       &--name {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+//         align-items: center;
+//         width: 100%;
+//         gap: 20px;
+//         padding: 5px;
+//       }
+//     }
+//     &__name {
+//       font-family: i.$header-font;
+//       font-size: 1.3rem;
+//     }
+//     &__epithet {
+//       font-size: 0.8rem;
+//     }
+
+//     &__portrait {
+//       width: 50%;
+//     }
+//   }
+// }
