@@ -45,6 +45,9 @@ The image of the character featured on the trading card was created by [Sarah Lo
 
 The spiral vector graphics were created by myself using Adobe Illustrator.
 
+Spiral Favicon:
+<a href="https://www.flaticon.com/free-icons/spiral" title="spiral icons">Spiral icons created by Voysla - Flaticon</a>
+
 ## Fonts
 
 "Caprice"
